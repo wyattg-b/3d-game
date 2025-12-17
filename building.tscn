@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=3 uid="uid://uy0fdm1w66go"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rqn35"]
+albedo_color = Color(0.367595, 0.36762, 0.334966, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rqn35"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5j34s"]
+albedo_color = Color(1, 1, 0.0392157, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5j34s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yopf"]
+albedo_color = Color(0.367595, 0.36762, 0.334966, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f1gjg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnfc1"]
+next_pass = SubResource("StandardMaterial3D_f1gjg")
+albedo_color = Color(0.367595, 0.36762, 0.334966, 1)
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(9, 0, 0, 0, 14, 0, 0, 0, 6, 0, 6.41178, 0)
+material_override = SubResource("StandardMaterial3D_rqn35")
+mesh = SubResource("BoxMesh_rqn35")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.213699, 8.99298, 0.98421)
+material_override = SubResource("StandardMaterial3D_rqn35")
+size = Vector3(4, 6, 1)
+material = SubResource("StandardMaterial3D_5j34s")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGBox3D"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -1.37808, 0, 0.554967)
+material_override = SubResource("StandardMaterial3D_rqn35")
+operation = 2
+polygon = PackedVector2Array(0, 0, 0, 1, 1.67073, 1.52585, 1, 0)
+material = SubResource("StandardMaterial3D_5j34s")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(6, 0, 0, 0, 10, 0, 0, 0, 5, 0.103761, 17.0293, -0.0391636)
+material_override = SubResource("StandardMaterial3D_rqn35")
+material = SubResource("StandardMaterial3D_5j34s")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 10, 0, 0, 0, 4, 0.210455, 26.6364, 0)
+material_override = SubResource("StandardMaterial3D_rqn35")
+material = SubResource("StandardMaterial3D_5j34s")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 4, 0, 0, 0, 3, 0.19432, 32.2809, 0)
+material_override = SubResource("StandardMaterial3D_rqn35")
+material = SubResource("StandardMaterial3D_5j34s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(7, 0, 0, 0, 14, 0, 0, 0, 2, 0, 5.88941, 0)
+shape = SubResource("BoxShape3D_5j34s")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(17, 0, 0, 0, 27, 0, 0, 0, 7, -13.897, 11.4527, 6.88)
+material_override = SubResource("StandardMaterial3D_2yopf")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGBox3D5"]
+transform = Transform3D(0.294118, 0, 0, 0, 0.037037, 0, 0, 0, 0.142857, -0.237671, 0.349723, -0.464643)
+operation = 2
+size = Vector3(1, 5, 14)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGBox3D5"]
+transform = Transform3D(0.294118, 0, 0, 0, 0.037037, 0, 0, 0, 0.142857, 0.208333, 0.338312, -0.464643)
+operation = 2
+size = Vector3(1, 5, 14)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGBox3D5"]
+transform = Transform3D(0.294118, 0, 0, 0, 0.037037, 0, 0, 0, 0.142857, 0.208333, -0.00622299, -0.464643)
+operation = 2
+size = Vector3(1, 5, 14)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGBox3D5"]
+transform = Transform3D(0.294118, 0, 0, 0, 0.037037, 0, 0, 0, 0.142857, -0.26618, -0.00201544, -0.464643)
+operation = 2
+size = Vector3(1, 5, 14)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="CSGBox3D5"]
+transform = Transform3D(0.294118, 0, 0, 0, 0.037037, 0, 0, 0, 0.142857, 0.00208426, -0.412761, -0.464643)
+operation = 2
+size = Vector3(1, 8, 14)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.3574, 9.45094, 0)
+material_override = SubResource("StandardMaterial3D_qnfc1")
+radius = 4.384
+height = 21.381
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.9465, 0)
+material_override = SubResource("StandardMaterial3D_qnfc1")
+radius = 3.205
+height = 20.0
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.4409, 35.5347, 0)
+material_override = SubResource("StandardMaterial3D_qnfc1")
+radius = 2.516
+height = 16.91

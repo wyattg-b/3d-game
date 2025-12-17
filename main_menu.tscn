@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxii8fe31hc2g"]
+
+[ext_resource type="Script" uid="uid://bjmnqmrk8qomj" path="res://main_menu.gd" id="1_06t4h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rhts7"]
+font_size = 67
+
+[node name="Main menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="Container" type="Container" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.494899, 0.13362, 0.553954, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -274.5
+offset_top = -41.5
+offset_right = 274.5
+offset_bottom = 217.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.75
+text = "START"
+
+[node name="QUIT" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "QUIT"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.5
+offset_top = -95.5
+offset_right = 190.5
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Snowmania"
+label_settings = SubResource("LabelSettings_rhts7")
+horizontal_alignment = 1
+vertical_alignment = 1

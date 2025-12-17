@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c45pg27y3cefq"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5ixmk"]
+size = Vector2(20, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7h81y"]
+size = Vector3(20, 0.1, 20)
+
+[node name="mountain ground" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.994881, 0.101056, 0, -0.096432, 0.949355, -0.299041, -0.03022, 0.29751, 0.95424, -1.95506, 0.308502, -0.976226)
+mesh = SubResource("PlaneMesh_5ixmk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.994881, 0.101056, 0, -0.096432, 0.949355, -0.299041, -0.03022, 0.29751, 0.95424, -1.95506, 0.308502, -0.976226)
+shape = SubResource("BoxShape3D_7h81y")

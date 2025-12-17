@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgv7acj8v8gcx"]
+
+[ext_resource type="Script" uid="uid://eeikovcwa0gr" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="Script" uid="uid://bccktrq5xeoit" path="res://HurtBox.gd" id="1_7k104"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7xaro"]
+albedo_color = Color(1, 0.027451, 0.0901961, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7k104"]
+material = SubResource("StandardMaterial3D_7xaro")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4gyqm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7k104"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qi2p4"]
+radius = 0.542263
+height = 1.72059
+
+[node name="enemy" type="CharacterBody3D"]
+script = ExtResource("1_4gyqm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.628964, 1.55782, 0.1021)
+mesh = SubResource("CapsuleMesh_7k104")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.628964, 1.55782, 0.1021)
+shape = SubResource("CapsuleShape3D_4gyqm")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 2.3
+
+[node name="HurtBox" type="Area3D" parent="."]
+script = ExtResource("1_7k104")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox"]
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0.6, 1.6492, 0.14172)
+shape = SubResource("CapsuleShape3D_7k104")
+
+[node name="AttackArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.998709, -0.0508021, 0, 0.0508021, 0.998709, 0.00637555, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackArea"]
+transform = Transform3D(2.65931, 0, 1.38854, 0, 3, 0, -1.38854, 0, 2.65931, 0.649601, 1.61244, 0.143722)
+shape = SubResource("CapsuleShape3D_qi2p4")
+
+[node name="AttackCooldown" type="Timer" parent="."]
+one_shot = true

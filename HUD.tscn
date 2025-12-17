@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpabpotbiinvy"]
+
+[ext_resource type="Script" uid="uid://ci8mmjpqufq2q" path="res://HUD.gd" id="1_37p78"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_37p78")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthBar" type="ProgressBar" parent="Control"]
+offset_right = 557.0
+offset_bottom = 88.0

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://drtqij7x7ijos"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_ikjd3"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qxh2c"]
+
+[node name="tent" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.74846e-07, 0, -1.74846e-07, 1, 0, 0, -0.177567)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.034773, 0.386876, 7.45058e-08)
+mesh = SubResource("PrismMesh_ikjd3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12626, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_qxh2c")

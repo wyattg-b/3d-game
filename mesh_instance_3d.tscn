@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://choaphg3871ex"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6xxru"]
+albedo_color = Color(0.639216, 0.207843, 0.105882, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yvhtj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yvhtj"]
+albedo_color = Color(0, 0.443137, 0.0313726, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.366272, 0)
+material_override = SubResource("StandardMaterial3D_6xxru")
+mesh = SubResource("CylinderMesh_yvhtj")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0073688, 2.70941, 0.0210173)
+radius = 0.846
+height = 3.385
+cone = true
+material = SubResource("StandardMaterial3D_yvhtj")
